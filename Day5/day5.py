@@ -5,7 +5,7 @@ def arrToInt(arr):
     for subarray in arr:
         int_subarray = []
         for element in subarray:
-            if element:  # Check if the string is not empty
+            if element:
                 int_subarray.append(int(element))
         array_of_ints.append(int_subarray)
     return array_of_ints
@@ -14,7 +14,6 @@ def arrToInt(arr):
 def findDest(arr, source):
     dest = None
     for target in arr:
-        #target = list(map(int, target))
         if target[1] <= source < target[1] + target[2]:
             dest = target[0] + ( source - target[1])
             break
@@ -45,6 +44,4 @@ for i,seed in enumerate(seeds[0]):
         for seed in range(int(seeds[0][i]), int(seeds[0][i])+int(seeds[0][i+1])):
             res = findDest(humidityToLoc,(findDest(tempToHumidity,(findDest(lightToTemp,(findDest(waterToLight,(findDest(fertToWater,(findDest(soilToFert,(findDest(seedToSoil, seed)))))))))))))
             lowestDest = res if res < lowestDest else lowestDest
-    print("progressing..")
-
 print("Part 2: "  + str(lowestDest))
