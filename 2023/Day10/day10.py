@@ -89,29 +89,29 @@ print("Part 1: " + str(int(pathLength/2)))
 #         else:
 #             if count == 1:
 #                 print((i,j))
-#                 vol+=1
+#                 vol+=1cls
 #         #print(pos)
 
-vol=0
-count=0
-isInline=0
-for i, lineX in enumerate(lines):
-    for j, pos in enumerate(lineX):
-        if(i,j) in totalPath:
-            if ( (i,j+1) in totalPath and abs(totalPath.index((i,j+1)) - totalPath.index((i,j))) == 1 ) or ( (i,j-1) in totalPath and  abs(totalPath.index((i,j)) - totalPath.index((i,j-1))) == 1 ):
-                print("test", (i,j))
-                #count=0
-                isInline=1
-                continue
-            isEnc=0
-            count = 0 if count==1 else 1
-            print((i,j), count)
-        else:
-            if count == 1 and isInline == 0:
-                print("Hit on: ",(i,j))
-                vol+=1
-    count=0
-print(vol)
+# vol=0
+# count=0
+# isInline=0
+# for i, lineX in enumerate(lines):
+#     for j, pos in enumerate(lineX):
+#         if(i,j) in totalPath:
+#             if ( (i,j+1) in totalPath and abs(totalPath.index((i,j+1)) - totalPath.index((i,j))) == 1 ) or ( (i,j-1) in totalPath and  abs(totalPath.index((i,j)) - totalPath.index((i,j-1))) == 1 ):
+#                 print("test", (i,j))
+#                 #count=0
+#                 isInline=1
+#                 continue
+#             isEnc=0
+#             count = 0 if count==1 else 1
+#             print((i,j), count)
+#         else:
+#             if count == 1 and isInline == 0:
+#                 print("Hit on: ",(i,j))
+#                 vol+=1
+#     count=0
+# print(vol)
 
 for i, lineX in enumerate(lines):
     for j, pos in enumerate(lineX):
